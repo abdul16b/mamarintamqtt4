@@ -1,0 +1,122 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MQTT</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#273036" fill-opacity="1000000000" d="M0,32L40,32C80,32,160,32,240,64C320,96,400,160,480,165.3C560,171,640,117,720,80C800,43,880,21,960,58.7C1040,96,1120,192,1200,208C1280,224,1360,160,1400,128L1440,96L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"></path></svg>
+    </div>
+
+    <div class="container">
+        <div class="col-12" style="width: 100%;">
+            <center>
+                <h1>MQTT over Web Socket</h1>
+            </center>
+        </div>
+        <div class="row mt-4">
+            <div class="col mr-2 rounded" style="border: 1px solid white;">
+                <div class="row sample">
+                    <h2 class="mt-2">Broker</h2>
+                </div>
+                <label for="address" class="mt-4">Address</label>
+                <input id="address" class="form-control" type="text" value="wss://test.mosquitto.org:8081/mqtt" disabled>
+                <button id="btn-connect" class="btn btn-success mt-4 mb-4" type="button">Connect</button>
+                <button id="btn-connect" class="btn btn-danger mt-4 mb-4" type="button">Disconnect</button><br>
+                <label for="status" class="mt-2">Status</label>
+                <input id="status" class="form-control  mb-4" value="Press Connect!" type="text" >
+
+            </div>
+
+            <div class="col mr-2 rounded" style="border: 1px solid white;">
+                <div class="row sample">
+                    <h2 class="mt-2">Published</h2>
+                </div>
+                <label for="input-topic" class="mt-4">Topic</label>
+                <input id="input-topic" type="text" class="form-control" value="cloud">
+                <label for="input-payload" class="mt-2">Payload</label>
+                <input id="input-payload" type="text" class="form-control" value="strife">
+                <button id="btn-pub" class="btn btn-primary mt-4 mb-4" type="button">Publish</button>
+            </div>
+
+            <div class="col rounded" style="border: 1px solid white;">
+                <div class="row sample row-no-padding">
+                    <h2 class="mt-2">Subscribe</h2>
+                </div>
+                <label for="" class="mt-4">Topic</label>
+                <input id="input-subtopic" type="text" class="form-control" value="cloud">
+                <button id="btn-sub" type="button" class="btn btn-primary mt-4">Subscribe</button>
+                <button class="btn btn-warning mt-4">Unsubscribe</button>
+            </div>
+        </div>
+        <div class="row" style="height: 350px;">
+            <div class="col " style="width: 290px;">
+                <div id="type" class="row sample mt-2"> 
+                <h5>Incoming Message</h5></div>
+                <table class="table rounded">
+                    <thead>
+                        <th>Topic</th>
+                        <th>Payload</th>
+                        <th>Time Stamp</th>
+                    </thead>
+                    <tbody id="msg">
+                    </tbody>
+                </table>
+                <div id="bg1" style="margin-top: -15px; padding: 0%;">
+                    <img src="./img/data.png" alt="" style="width: 287px;">
+                </div>
+            </div>
+            <div class="col "  style="width: 290px;">
+                <div id="type" class="row sample mt-2">
+                <h5>Published Message</h5></div>
+                <table class="table rounded">
+                    <thead>
+                        <th>Topic</th>
+                        <th>Payload</th>
+                        <th>Time Stamp</th>
+                    </thead>
+                    <tbody id="pub">
+                    </tbody>
+                </table>
+                <div id="bg2" style="margin-top: -15px; padding: 0%;">
+                    <img src="./img/data.png" alt="" style="width: 287px;">
+                </div>
+            </div>
+            <div class="col"  style="width: 290px;">
+                <div id="type" class="row sample mt-2">
+                <h5>Subcribe Message</h5></div>
+                <table class="table rounded">
+                    <thead>
+                        <th>Topic</th>
+                        <th>Time Stamp</th>
+                    </thead>
+                    <tbody id="sub">
+                    </tbody>
+                </table>
+                <div id="bg3" style="margin-top: -15px; padding: 0%;"> 
+                    <img src="./img/data.png" alt="" style="width: 287px;">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="browserMqtt.js"></script>
+<script src="index.js"></script>
+</html>

@@ -1,0 +1,63 @@
+.row {
+    padding: 5px;
+}
+body{
+  background-color: black;
+}
+
+
+#type{
+  margin-left: .5px;
+  margin-right: .5px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+h5{
+  color: white;
+}
+h1{
+  color: white;
+  border-radius: 5px;
+  padding: 5px;
+}
+.sample{
+  background-color: #273036;
+}
+h2{
+  color: white;
+  margin-left: 70px;
+}
+
+.btn{
+  color: white;
+}
+label{
+  color: white;
+}
+div.form-group {
+    border: 1px solid black;
+    width: 100%;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    border-radius: 1em;
+    overflow: hidden;
+  }
+  
+table td, table th {
+    padding: 8px;
+    font-size: 12px;
+  }
+  
+table tr:nth-child(even){background-color: #f2f2f2;}
+table tr:nth-child(odd){background-color: #ddd;}
+  
+table tr:hover {background-color: #f79401;}
+  
+table th {
+    text-align: left;
+    background-color: #273036;
+    color: white;
+  }
